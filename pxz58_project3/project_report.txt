@@ -1,0 +1,49 @@
+This animation is of an ATP synthase making ATP using protons moving across the membrane.
+
+There are 7 classes, 5 of which are under the parent class ATP synthase components. (I understand this
+was not necessary) The non-related class is protons, which is used for coding all the protons. The
+ATP synthase components contains the axle, c ring, F1, half channel, and stator classes, which are
+components of an ATP synthase. The protons class simply codes the drift of the protons and displays them.
+It also interacts with the half channel class to organize movement of protons through the half channel.
+The ATP synthase components class drifts throughout the phospholipid bilayer. The axle, c ring, and F1
+classes rotate. However, the F1 class also periodically produces a blue ball, which represents an ATP.
+The half channel and stator classes do not rotate and simply display these components as all the other
+classes do.
+
+ATP synthase components has 6 members, 3 of which are fields. One of the 3 methods
+is the constructor method, and one calculates the drift of the ATP synthase through the bilayer.
+
+The F1 class has 7 members, 4 of which are fields. It has a constructor, a display, and a spawn method. The 
+spawn method periodically spawns a blue ball, representing ATP.
+
+The axle class has 3 members, 1 of which is a field. The 2 methods are a constructor and a display method.
+The c ring is much the same as the axle class.
+
+The half channel class has 4 members, 1 of which is a field. Besides the normal constructor and display
+methods, there is also a method called move_thru that takes a proton as an argument in order to pair that
+proton with the half channel and move it through the half channel before respawning it on the intermembrane
+space side of the animation.
+
+The stator class has 2 members, both of which are methods. One is a display method, and the other is a 
+constructor method.
+
+The protons class has 18 members, 8 of which are fields. Besides the expected constructor and display methods,
+there are 3 methods for getting and 3 methods for setting certain fields. These are meant primarily 
+for interaction with the half channel class and were necessary to push a proton through the half channel 
+and respawn it. Finally, there is a drift method for calculating the random drift of a proton and a move method
+for displaying the movement of the proton calculated in the drift method.
+
+The proton moving through the half channel uses translation to accomplish its task, and the F1, axle, and c ring 
+classes use rotation as well as translation to display the rotation of these parts. The overall ATP synthase is
+also being translated through space.
+
+There were many unexpected challenges throughout making this program function. For example, one major issue was that having
+the bounds set too low caused the protons to cluster when very large numbers were spawned in, which I took a while to
+realize was causing the issue. It was also challenging to get the random drift to work, and I ended up asking instructor Kevin
+Song for help with finding a good, random formula I could implement. The hardest piece to implement by far was sending protons
+through the half channel. To be honest, since you can't even see the initial entry of the proton into it, I didn't really
+need to code that part. But more importantly, it was challenging to control the proton entry and exit such that it looked
+good. It often went far too fast or suddenly stopped in the middle of the pathway. There were a variety of reasons for these
+issues, that required me to adjust how I used certain variables and organized the interaction between the half channel and
+protons classes. Originally, I actually planned not to use the protons class at all and just spawn it in from the half channel
+class, but I ended up scrapping all of that because it looked bad and made the half channel class very bloated.
