@@ -1,5 +1,3 @@
-I will not be using any slip days for this project. 
-
 The program can be run simply by pressing the run button after opening the
 .pde file. The image to be displayed and filtered can be changed by typing in the file name of any image in the data folder 
 into the name of the variable photo. After running the program, the displayed photo can be filtered with any of 5 filters:
