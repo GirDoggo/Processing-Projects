@@ -1,5 +1,3 @@
-I am using 2 slip days for this project.
-
 This program is a physical particle simulation of a ball in a box. The user can control this ball by clicking
 on it and dragging it to change its position. Before or while dragging the ball, the user can right click on the 
 ball in order to release it with added force when it is next released. The magnitude of this force can be increased
