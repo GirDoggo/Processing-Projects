@@ -1,0 +1,107 @@
+___________________________________________________________________________________________________________
+___________.__                               __________        __    __                 _____.__         
+\_   _____/|  |   ____ ______ ______ ___.__. \______   \__ ___/  |__/  |_  ____________/ ____\  | ___.__.
+ |    __)  |  |  /  _ \\____ \\____ <   |  |  |    |  _/  |  \   __\   __\/ __ \_  __ \   __\|  |<   |  |
+ |     \   |  |_(  <_> )  |_> >  |_> >___  |  |    |   \  |  /|  |  |  | \  ___/|  | \/|  |  |  |_\___  |
+ \___  /   |____/\____/|   __/|   __// ____|  |______  /____/ |__|  |__|  \___  >__|   |__|  |____/ ____|
+     \/                |__|   |__|   \/              \/                       \/                  \/     
+
+
+Files:
+* group_project - main file
+	* setup - initializes the variables to be used in drawing the main menu and the PlayGame object,
+		  which contains most of the code for running the actual game itself. It also initializes
+		  the score data to be loaded into the game and updated.
+	* transition_to_loading - controls the animation of the butterfly flying away that plays when
+				  a new game is started.
+	* draw - loop that controls entry and display of every part of the game from the main menu to the
+		 game over screen.
+* menu_anim
+	* menu - displays the text of the menu and their animations
+* menu_text
+	* menu_text - initializes the variables containing the position and text of the menu text
+	* get_adj - set to true if the previous letter in a series of letters is jiggling
+	* set_adj - sets the adj_jig boolean
+	* set_jig - sets the jig boolean
+	* set_counter - sets the counter used to lerp the text to a given number
+	* set_size - adjusts the size of the text
+	* set_string - adjusts what the text says
+	* menu_animation - contains the animations for lerping the text and jiggling it
+	* displays the text on screen without any anmations
+* background_draw
+	* background_draw - draws all the geometry that makes up the background of the main menu screen,
+			    including the butterflies and clouds that move on the screen.
+* functions
+	draw_top_pipe - functions exactly like the function within the pipe class but can be accessed
+			by any PVector to draw a pipe there
+	loading_screen - displays a loading screne before the game starts
+	keyPressed - controls a variety of button controls on the menus of the game, including
+		     starting the game, inputting the username, checking the scores, exiting the game,
+		     and returning to the main menu after losing a game.
+* PlayGame
+	* PlayGame - initializes needed variables
+	* get_time - get time survived
+	* keyPressed - if not hit (hit = dead), accept keyPressed for SPACE
+	* run_confetti - checks if player is offscreen. If offscreen and not dead, set dead,
+			 updates the position of the confetti in the confetti system to the
+			 x and y position of the player, and updates needed variables
+		       - stops the pipes from moving (calling stop_pipe() to set speed to 0)
+		       - if player is dead, run the confetti system
+	* play - calls game_background
+	       - draw pipes
+	       - check if butterfly is offScreen, if it isn't keep drawing the butterfly
+		 if it is, stop drawing the butterfly and call run_confetti
+	       - checks for collision between pipes and player and count up timer if not hit (not dead)
+
+* All_Pipes
+	* AllPipes - creates all_pipes arrayList
+	* get_all_pipes - returns all_pipes variable
+	* draw - draws the pipes in the all_pipes arrayList
+
+* Pipe
+	* set_all_pipes - updates all_pipes variable
+	* get_all_pipes - get all_pipes variable
+	* get_x - get X position for pipe set
+	* get_dimensions - returns pipe dimensions
+	* get_top_pos - returns center position of top pipe
+	* get_bottom_pos - returns center position of bottom pipe
+	* stop_pipe - set the speed to 0
+	* move - translate pipes across the screen by speed
+	       - if position is outside the screen, get x position of the back pipe.
+		 Update position of the first pipe to the back of the last pipe in the arrayList
+		 Move first pipe in arrayList to the back. Randomizes the y position of the pipe
+		 as it respawns.
+	* draw_top_pipe - draws top pipe based on the x and (y - gap - 40). 40 comes from the
+			  pipe lip
+	* draw_bottom_pipe - draws bottom pipe based on the x and (y - 40). 40 comes from the
+			     pipe lip
+	* pipe_draw_set - draw top and bottom pipe
+			- calls move function
+
+* End_Screen
+	* EndScreen() - creates a translucent rectangle after it is called
+	* draw_screen - takes time as an input
+		      - displays end screen text
+
+* Collision
+	* update_class - get hotbox for the character and pipe class
+	* collision - takes player_pos, player_dim, pipe_pos, pipe_dim
+		    - calculate collision between rectangle(pipe) and ellipse(player)
+	* pipe_collision - get player and pipe position and dimension and call collision function
+			   for both the top and bottom pipe. Return boolean checking for both
+			   top and bottom collide.
+	* show_hitbox - shows hotbox
+	* check_collision - calls pipe_collision
+			  - returns boolean for collision
+
+* Timer
+	* get_time - returns the time
+	* countUp - count up time based on frame rate
+
+* confetti
+* confetti_system
+* butterfly_Olivia
+
+
+
+___________________________________________________________________________________________________________
