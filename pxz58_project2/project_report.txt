@@ -1,0 +1,33 @@
+I am not using any slip days for this project.
+
+This animation is of the concept of an alligator immune cell that targets and destroys certain cells in the blood stream.
+It depicts a blood vessel flowing to the right of the screen, carrying both red blood cells and miscellaneous solutes
+that are simply represented by white circles. Cells deemed "alligator cells" that are shaped like pacman target some red blood
+cells, chase them down, and perform a roll similar to the crocodile/alligator "death roll" to destroy that cell. 
+
+Three classes are used in this program, a fluid objects class, a red blood cell (RBC) class, and an alligator class. The 
+fluid objects class simply animates the movement of white circles in the bloodstream to better illustrate the natural flow
+of the bloodstream. The RBC subclass of the fluid objects parent class animates the movement of the red blood cells 
+through the bloodstream, including collisions with some other RBCs. Finally, the alligator subclass of the fluid objects parent
+class animates the alligator cells chasing down target red blood cells and detects the collision between them.
+
+Within the fluid object class are 15 members, 9 of which are fields, 6 of which are methods including the constructor. 
+Within the RBC subclass are 15 members, excluding the methods that were not overridden from the super class and the fields common
+to both fluid object parent class and the RBC subclass. 3 of these members are fields while the other 12 are methods.
+Within the alligator subclass are 26 members, excluding the methods that were not overridden from the super class and the fields
+common to both fluid object and alligator. Of these, 9 are fields, and 17 are methods.
+
+This project meets the two transformation requirement and uses all three of the rotation, scale, and translate transformations.
+The scale and rotation transformations are used to make the alligator death roll animation, and the scale transformation is used
+to make the red blood cells appear to rotate more naturally in the blood vessel. Translate is used to move everything. It also meets
+the two instances requirement as there are many instances of the alligator, RBC and fluid object classes.
+
+There were many unexpected challenges with this project. Collision detection in particular was difficult to implement because
+I didn't want to iterate over every object I created out of fear of slowing down the program too much. It was also difficult to
+figure out a way to play the alligator "death roll" animation after a collision between the alligator and the RBC was detected.
+Finally, it was difficult to create a way to respawn the alligators to target new cells. To solve this, I ended up using a
+solution of teleporting the target RBC out of the screen and freezing the alligator cell until it was done playing the animation,
+then teleporting the alligator cell out of bounds as well and waiting for the RBC target cell to spawn back in randomly before 
+teleporting the alligator cell back on screen and letting it chase its target again.
+
+The SVG import extra credit should be fulfilled by this project.
