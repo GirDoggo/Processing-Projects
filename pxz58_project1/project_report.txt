@@ -1,0 +1,15 @@
+This program has the required grayscale, sharpen, blur, edge detection, and restore to original functionalities.
+In addition to these functionalities, it also has a colorblind filter that displays an image as it might look to
+someone with red-green colorblindness.
+There is also a gaussian blur kernel generator that uses the Gaussian function to create a kernel for performing a Gaussian
+blur. This kernel's size is based on the row size written to the variable, u, which represents the array size of one row of
+the kernel. It can only accept odd numbers because image kernels must be odd. 
+The custom generated kernel can then be applied by toggling it on and then applying the blur function. The standard blur kernel
+given in the assignment can be toggled back on and applied using that same blur function.
+The extra credit option improving efficiency by turning off the draw function's loop has been implemented here, as well. 
+Each time a filter is called, the keypress also calls the redraw() method, so the draw loop only runs once, each time a filter
+is applied.
+
+It should be noted that the for loops in the various filter functions are basically taken from the class slides, some of them
+with minor changes, depending on the context. Some bugs, especially with regards to application of the custom blur kernel,
+were fixed thanks to help from instructors Mr. Kevin Song and Ms. Nikitha Gollamudi. Otherwise, all code was written by me.
