@@ -13,9 +13,8 @@ to apply a force constantly over some period of time longer than 1 frame. Finall
 as if it were colliding only in elastic collisions, meaning all kinetic energy is conserved, and no energy is lost from 
 any collision.
 
-I drew the ball using the sphere function built into Processing (Instructor Kevin Song assured me that this would be
-acceptable for the requirements for project 4). The background was drawn using vertices in the beginShape()/endShape()
-functions built into Processing. 
+I drew the ball using the sphere function built into Processing. The background was drawn using vertices in the 
+beginShape()/endShape() functions built into Processing. 
 
 There were many unexpected challenges. Getting the correct ordering of the applications of the collision, gravity, drag, 
 user-applied forces, and updating of the ball's position such that the ball moved in an accurate way was difficult because
@@ -26,6 +25,3 @@ itself. It was also surprisingly difficult to implement the resetting feature of
 due to user interactions. The implementation of this caused many issues such as rubberbanding of the ball or frustrating the
 user experience. Although some of the many issues caused by it were fixed, others, such as making manipulation of the ball harder,
 were not.
-
-Saving a few frames of the simulation in an animation was accomplished for the extra credit assignment.
-User interactivity was implemented in this simulation, satisfying the other option for extra credit.
