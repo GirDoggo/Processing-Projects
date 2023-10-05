@@ -1,0 +1,31 @@
+This simulation depicts a ball in a box, which obeys the laws of gravity and drag as if it were on Earth. The user
+can also move the ball around and apply different amounts of force and impulse to the ball using the steps described
+in the README file. The ball collides and bounces off the walls as it would with a real box, as well. 
+
+There is only one class in this simulation, the Ball class. The ball class is responsible for displaying the ball and
+handling all of the physics of the ball, applying all relevant forces to the ball, updating its position accordingly,
+handling collisions, and interacting with the user.
+
+There are 3 potential forces in this simulation. 2 are always present, and one can be applied by the user. The forces
+of gravity and drag are both always acting on the ball, and the force applied by the user acts as if it were an actual 
+force applied by dragging or pushing the ball. This is why it has an adjustable impulse, to simulate if a person were
+to apply a force constantly over some period of time longer than 1 frame. Finally, the ball also collides with the walls
+as if it were colliding only in elastic collisions, meaning all kinetic energy is conserved, and no energy is lost from 
+any collision.
+
+I drew the ball using the sphere function built into Processing (Instructor Kevin Song assured me that this would be
+acceptable for the requirements for project 4). The background was drawn using vertices in the beginShape()/endShape()
+functions built into Processing. 
+
+There were many unexpected challenges. Getting the correct ordering of the applications of the collision, gravity, drag, 
+user-applied forces, and updating of the ball's position such that the ball moved in an accurate way was difficult because
+I didn't expect the order these commands were placed in the draw loop to matter so much for how the physics behaved. 
+Implementing user interaction in a 3D space was also very challenging because the mouse is on a 2D screen. I had to make 
+many math equations up in order to account for distortion of position due to perspective, both of the ball and for the mouse
+itself. It was also surprisingly difficult to implement the resetting feature of the simulation when the ball goes out of bounds
+due to user interactions. The implementation of this caused many issues such as rubberbanding of the ball or frustrating the
+user experience. Although some of the many issues caused by it were fixed, others, such as making manipulation of the ball harder,
+were not.
+
+Saving a few frames of the simulation in an animation was accomplished for the extra credit assignment.
+User interactivity was implemented in this simulation, satisfying the other option for extra credit.
